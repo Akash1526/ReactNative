@@ -1,0 +1,53 @@
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View,SafeAreaView,Button, ScrollView } from 'react-native';
+import { useState } from 'react';
+export default function App() {
+  const[month,setmonth]=useState([
+    {name:'january',id:1},
+    {name:'february',id:2},
+    {name:'march',id:3},
+    {name:'april',id:4},
+    {name:'may',id:5},
+    {name:'june',id:6},
+    {name:'july',id:7},
+    {name:'august',id:8},
+    {name:'september',id:9},
+    {name:'october',id:10},
+    {name:'november',id:11},
+    {name:'decemberr',id:12},
+
+  ])
+  return (
+    <SafeAreaView style={styles.container}>
+
+      
+      <ScrollView>
+      {
+        month.map(month=>{
+          return(
+            <Text style={styles.Text}>{month.name}</Text>
+          )
+        })
+      }
+      <StatusBar style="auto" />
+      </ScrollView>
+    </SafeAreaView>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#9999',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  Text:{
+
+    fontweight:'bold',
+    backgroundColor:'pink',
+    width:300,
+    padding:20,
+    margin:15,
+  }
+});
