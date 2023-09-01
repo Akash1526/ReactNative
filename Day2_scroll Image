@@ -1,0 +1,41 @@
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View,SafeAreaView,Button, ScrollView,Image } from 'react-native';
+import { useState } from 'react';
+export default function App() {
+  
+  return (
+    <SafeAreaView style={styles.container}>
+
+      
+      <ScrollView horizontal={true}>
+        <Image style={styles.image}source={{uri :'https://picsum.photos/200/300?grayscale'}}resizeMode='cover'/>
+        <Image style={styles.image} source={{uri :'https://picsum.photos/200/300/?blur=2'}}resizeMode='cover'/>
+        <Image style={styles.image} source={{uri :'https://picsum.photos/id/237/200/300'}} resizeMode='cover'/>
+        <Image source={require('./assets/icon.png')} style={styles.image} resizeMode='cover'/>
+        <Image source={require('./assets/splash.png')} style={styles.image} resizeMode='cover'/>
+        <Image source={require('./assets/adaptive-icon.png')} style={styles.image} resizeMode='cover'/>
+        <Image source={require('./assets/favicon.png')} style={styles.image} resizeMode='cover'/>
+        <Image style={styles.image} source={{uri: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAzCAYAAAA6oTAqAAAAEXRFWHRTb2Z0d2FyZQBwbmdjcnVzaEB1SfMAAABQSURBVGje7dSxCQBACARB+2/ab8BEeQNhFi6WSYzYLYudDQYGBgYGBgYGBgYGBgYGBgZmcvDqYGBgmhivGQYGBgYGBgYGBgYGBgYGBgbmQw+P/eMrC5UTVAAAAABJRU5ErkJggg==', }}/>
+        <Image style={styles.image}source={{uri: 'https://reactnative.dev/img/tiny_logo.png',}}/>
+   </ScrollView>
+    </SafeAreaView>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'F5D7DB',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  image:{
+    width:300,
+    height:300,
+    borderWidth:1,
+    borderColor:'gray',
+    alignItems: 'center',
+    justifyContent: 'center',
+  }
+});
+
