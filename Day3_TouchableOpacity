@@ -1,0 +1,50 @@
+import { StatusBar } from 'expo-status-bar';
+import { useState } from 'react';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+
+export default function App() {
+  const [count,setCount]=useState(0)
+  const handlepress =()=>{
+    setCount(count + 1)
+  }
+  const handlepressed =()=>{
+    setCount(count -1)
+  }
+  return (
+    <View style={styles.container}>
+      <Text style={styles.color}>Count:{count}</Text>
+      <TouchableOpacity style={styles.input} onPress={handlepress}>
+        <Text>click add </Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.button} onPress={handlepressed}>
+        <Text>click sub</Text>
+      </TouchableOpacity>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#6DA5C0',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 10,
+  },
+  input: {
+    alignItems: 'center',
+    backgroundColor: '#F5D7DB',
+    padding: 10,
+    marginBottom:10
+  },
+  color:{
+      color: '#f44336',
+  },
+  button: {
+    alignItems: 'center',
+    backgroundColor: '#f1916d',
+    padding: 10,
+    marginBottom:20
+  }
+
+});
