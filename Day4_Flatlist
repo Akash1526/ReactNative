@@ -1,0 +1,59 @@
+import { StatusBar } from 'expo-status-bar';
+import { useState } from 'react';
+import { Alert, FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+
+export default function App() {
+  const[student,setStudent]=useState([
+    {name:'Akash', id:1},
+    {name:'Siva', id:2},
+    {name:'Tamil', id:3},
+    {name:'Guhan', id:4},
+    {name:'Mani', id:5},
+    {name:'Hari', id:6},
+    {name:'Jai', id:7},
+    {name:'Sri', id:8},
+    {name:'Raja', id:9},
+    {name:'Vijay', id:10},
+    {name:'Jeeva', id:11},
+    {name:'Prakash', id:12}
+  ]);
+ const handpress=(val) =>{ 
+
+  console.log(val.name);
+  console.log( String(val.id));
+  
+  }
+  return (
+    <View style={styles.container}>
+     <FlatList
+     horizontal
+      data={student}
+      keyExtractor={(item)=>item.id}
+      renderItem={({item}) =>(
+        <TouchableOpacity onPress={()=>handpress(item)}>
+        <Text style={styles.design}>{item.name}</Text>
+        </TouchableOpacity>
+      )}
+     />
+    </View>
+  );
+      }
+ 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#26425A',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingTop:90
+  },
+  design:{
+    fontStyle:'italic',
+    fontSize:25,
+    height:70,
+    padding:10,
+    backgroundColor:'#6DA5C0',
+    margin:10,
+    width:200
+  }
+});
