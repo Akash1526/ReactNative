@@ -1,0 +1,36 @@
+import { StatusBar } from 'expo-status-bar';
+import { useState } from 'react';
+import { SafeAreaView } from 'react-native';
+import {Button, StyleSheet, Text, View, Image, Alert} from 'react-native';
+
+export default function App() {
+  const a = (Math.floor(Math.random()*10000));
+  const OTP=()=>{
+  alert(a);
+  }
+  return (
+    <SafeAreaView style={styles.container}>
+   
+      <Image source={{uri:'http://picsum.photos/200'}} style={styles.image} resizeMode='cover'/>
+      <Button title="OTP_NUMBER" onPress={OTP}/>
+      
+    </SafeAreaView>
+  );
+}
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+    margin: '789'
+  },
+  image:{
+    width:300,
+    height:300,
+    borderWidth:1,
+    borderColor:'gray',
+    alignItems: 'center',
+    justifyContent: 'center',
+   
+  }
+});
